@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>优选商城 - 用户注册</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <header class="header">
+        <div class="container">
+            <div class="header-left">
+                <a href="index.html" class="logo">
+                    <img src="images/LOGO.PNG" alt="优选商城">
+                </a>
+            </div>
+            <div class="header-right">
+                <a href="login.html" class="nav-link">立即登录</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 注册主体 -->
+    <main class="login-main">
+        <div class="login-container">
+            <!-- 左侧装饰图 -->
+            <div class="login-banner register-banner">
+                <img src="images/banner_1.png" alt="注册banner">
+                <div class="banner-content">
+                    <h3>加入优选 开启品质生活</h3>
+                    <p>新用户注册即享专属优惠</p>
+                </div>
+            </div>
+            
+            <div class="login-box register-box">
+                <div class="login-header">
+                    <h2>用户注册</h2>
+                    <p>创建您的优选商城账号</p>
+                </div>
+                
+                <form id="register-form" class="login-form">
+                    <div class="form-group">
+                        <label for="username">用户名</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">👤</span>
+                            <input type="text" id="username" name="username" placeholder="请输入用户名（3-20位字母、数字、下划线）" required>
+                        </div>
+                        <span class="error-message" id="username-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">邮箱</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">📧</span>
+                            <input type="email" id="email" name="email" placeholder="请输入邮箱地址" required>
+                        </div>
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">密码</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="password" name="password" placeholder="请输入密码（至少6位）" required>
+                            <span class="toggle-password" id="toggle-password">👁</span>
+                        </div>
+                        <span class="error-message" id="password-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirm-password">确认密码</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔑</span>
+                            <input type="password" id="confirm-password" name="confirm-password" placeholder="请再次输入密码" required>
+                        </div>
+                        <span class="error-message" id="confirm-password-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">手机号（选填）</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">📱</span>
+                            <input type="tel" id="phone" name="phone" placeholder="请输入手机号">
+                        </div>
+                        <span class="error-message" id="phone-error"></span>
+                    </div>
+                    
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="agree-terms" required>
+                            <span class="checkmark"></span>
+                            我已阅读并同意<a href="#" class="terms-link">《用户协议》</a>和<a href="#" class="terms-link">《隐私政策》</a>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="login-btn">注 册</button>
+                </form>
+                
+                <div class="login-footer">
+                    <p>已有账号？<a href="login.html">立即登录</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2024 优选商城 版权所有 | 学号：24215220234 | 姓名：黄贤臻</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/form-validation.js"></script>
+</body>
+</html>

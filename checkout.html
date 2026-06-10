@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>优选商城 - 结算</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-left">
+                    <a href="index.html" class="logo">
+                        <img src="images/LOGO.PNG" alt="优选商城">
+                    </a>
+                </div>
+                <div class="header-center">
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="搜索商品...">
+                        <button id="search-btn">搜索</button>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <a href="login.html" class="nav-link">登录</a>
+                    <a href="register.html" class="nav-link">注册</a>
+                    <a href="cart.html" class="nav-link cart-icon">
+                        <span>购物车</span>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <a href="profile.html" class="nav-link">个人中心</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主体内容 -->
+    <main class="checkout-main">
+        <div class="container">
+            <!-- 面包屑导航 -->
+            <div class="breadcrumb">
+                <a href="index.html">首页</a>
+                <span>></span>
+                <a href="cart.html">购物车</a>
+                <span>></span>
+                <span>结算</span>
+            </div>
+            
+            <!-- 结算步骤 -->
+            <div class="checkout-steps">
+                <div class="step active">
+                    <span class="step-number">1</span>
+                    <span class="step-name">确认订单</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <span class="step-name">选择支付</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <span class="step-name">完成订单</span>
+                </div>
+            </div>
+            
+            <!-- 结算表单 -->
+            <div class="checkout-container">
+                <!-- 左侧表单 -->
+                <div class="checkout-left">
+                    <!-- 收货地址 -->
+                    <div class="checkout-section">
+                        <h3 class="section-title">
+                            <span>📍</span> 收货地址
+                        </h3>
+                        <div class="address-list" id="address-list">
+                            <!-- 地址列表 -->
+                        </div>
+                        <button class="add-address-btn" id="add-address-btn">+ 添加新地址</button>
+                    </div>
+                    
+                    <!-- 商品清单 -->
+                    <div class="checkout-section">
+                        <h3 class="section-title">
+                            <span>📦</span> 商品清单
+                        </h3>
+                        <div class="product-list" id="product-list">
+                            <!-- 商品列表 -->
+                        </div>
+                    </div>
+                    
+                    <!-- 订单备注 -->
+                    <div class="checkout-section">
+                        <h3 class="section-title">
+                            <span>📝</span> 订单备注
+                        </h3>
+                        <textarea id="order-note" placeholder="请输入订单备注（选填）"></textarea>
+                    </div>
+                </div>
+                
+                <!-- 右侧订单信息 -->
+                <div class="checkout-right">
+                    <div class="order-summary">
+                        <h3 class="summary-title">订单信息</h3>
+                        
+                        <div class="summary-row">
+                            <span>商品金额</span>
+                            <span id="subtotal">¥0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>运费</span>
+                            <span id="shipping">¥0.00</span>
+                        </div>
+                        <div class="summary-row discount">
+                            <span>优惠</span>
+                            <span id="discount">-¥0.00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>实付金额</span>
+                            <span id="total">¥0.00</span>
+                        </div>
+                        
+                        <div class="payment-section">
+                            <h4>支付方式</h4>
+                            <div class="payment-options">
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="alipay" checked>
+                                    <span class="payment-icon">💳</span>
+                                    <span>支付宝</span>
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="wechat">
+                                    <span class="payment-icon">💬</span>
+                                    <span>微信支付</span>
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="card">
+                                    <span class="payment-icon">🏦</span>
+                                    <span>银行卡</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button class="submit-order-btn" id="submit-order-btn">提交订单</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 添加地址弹窗 -->
+    <div class="modal-overlay" id="address-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>添加收货地址</h3>
+                <button class="close-modal" id="close-modal">×</button>
+            </div>
+            <form id="address-form">
+                <div class="form-group">
+                    <label>收货人</label>
+                    <input type="text" id="contact-name" required placeholder="请输入收货人姓名">
+                </div>
+                <div class="form-group">
+                    <label>手机号</label>
+                    <input type="tel" id="contact-phone" required placeholder="请输入手机号">
+                </div>
+                <div class="form-group">
+                    <label>所在地区</label>
+                    <select id="address-region">
+                        <option value="">请选择地区</option>
+                        <option value="北京">北京市</option>
+                        <option value="上海">上海市</option>
+                        <option value="广州">广州市</option>
+                        <option value="深圳">深圳市</option>
+                        <option value="杭州">杭州市</option>
+                        <option value="成都">成都市</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>详细地址</label>
+                    <textarea id="address-detail" required placeholder="请输入详细地址"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="is-default">
+                        <span class="checkmark"></span>
+                        设置为默认地址
+                    </label>
+                </div>
+                <button type="submit" class="save-address-btn">保存地址</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 支付弹窗 -->
+    <div class="modal-overlay" id="payment-modal">
+        <div class="modal-content payment-modal">
+            <div class="modal-header">
+                <h3>选择支付方式</h3>
+            </div>
+            <div class="payment-amount">
+                <span>支付金额</span>
+                <span id="payment-amount">¥0.00</span>
+            </div>
+            <div class="payment-methods">
+                <button class="payment-method" data-method="alipay">
+                    <span class="method-icon">💳</span>
+                    <span>支付宝支付</span>
+                </button>
+                <button class="payment-method" data-method="wechat">
+                    <span class="method-icon">💬</span>
+                    <span>微信支付</span>
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-payment">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 订单成功弹窗 -->
+    <div class="modal-overlay" id="success-modal">
+        <div class="modal-content success-modal">
+            <div class="success-icon">✓</div>
+            <h3>订单提交成功！</h3>
+            <p>感谢您的购买，我们会尽快为您发货</p>
+            <div class="success-actions">
+                <button class="view-order-btn" id="view-order-btn">查看订单</button>
+                <button class="continue-shopping-btn" id="continue-shopping-btn">继续购物</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>关于我们</h3>
+                    <p>优选商城致力于为用户提供优质的购物体验</p>
+                </div>
+                <div class="footer-section">
+                    <h3>联系方式</h3>
+                    <p>客服热线：400-888-8888</p>
+                    <p>邮箱：service@youxuan.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>关注我们</h3>
+                    <img src="images/wechat.png" alt="微信公众号" class="wechat-qrcode">
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 优选商城 版权所有 | 学号：24215220234 | 姓名：黄贤臻</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

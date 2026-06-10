@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>优选商城 - 我的订单</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-left">
+                    <a href="index.html" class="logo">
+                        <img src="images/LOGO.PNG" alt="优选商城">
+                    </a>
+                </div>
+                <div class="header-center">
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="搜索商品...">
+                        <button id="search-btn">搜索</button>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <a href="login.html" class="nav-link">登录</a>
+                    <a href="register.html" class="nav-link">注册</a>
+                    <a href="cart.html" class="nav-link cart-icon">
+                        <span>购物车</span>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <a href="profile.html" class="nav-link">个人中心</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主体内容 -->
+    <main class="order-main">
+        <div class="container">
+            <!-- 面包屑导航 -->
+            <div class="breadcrumb">
+                <a href="index.html">首页</a>
+                <span>></span>
+                <a href="profile.html">个人中心</a>
+                <span>></span>
+                <span>我的订单</span>
+            </div>
+            
+            <!-- 订单状态筛选 -->
+            <div class="order-tabs">
+                <button class="tab-btn active" data-status="all">全部订单</button>
+                <button class="tab-btn" data-status="pending">待付款</button>
+                <button class="tab-btn" data-status="paid">待发货</button>
+                <button class="tab-btn" data-status="shipped">待收货</button>
+                <button class="tab-btn" data-status="completed">已完成</button>
+                <button class="tab-btn" data-status="cancelled">已取消</button>
+            </div>
+            
+            <!-- 订单列表 -->
+            <div class="order-list" id="order-list">
+                <!-- 订单列表将通过JavaScript动态生成 -->
+            </div>
+        </div>
+    </main>
+
+    <!-- 订单详情弹窗 -->
+    <div class="modal-overlay" id="order-modal">
+        <div class="modal-content order-modal">
+            <div class="modal-header">
+                <h3>订单详情</h3>
+                <button class="close-modal" id="close-order-modal">×</button>
+            </div>
+            <div class="modal-body" id="order-detail">
+                <!-- 订单详情内容 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>关于我们</h3>
+                    <p>优选商城致力于为用户提供优质的购物体验</p>
+                </div>
+                <div class="footer-section">
+                    <h3>联系方式</h3>
+                    <p>客服热线：400-888-8888</p>
+                    <p>邮箱：service@youxuan.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>关注我们</h3>
+                    <img src="images/wechat.png" alt="微信公众号" class="wechat-qrcode">
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 优选商城 版权所有 | 学号：24215220234 | 姓名：黄贤臻</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

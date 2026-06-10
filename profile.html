@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>优选商城 - 个人中心</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-left">
+                    <a href="index.html" class="logo">
+                        <img src="images/LOGO.PNG" alt="优选商城">
+                    </a>
+                </div>
+                <div class="header-center">
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="搜索商品...">
+                        <button id="search-btn">搜索</button>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <a href="login.html" class="nav-link">登录</a>
+                    <a href="register.html" class="nav-link">注册</a>
+                    <a href="cart.html" class="nav-link cart-icon">
+                        <span>购物车</span>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <a href="profile.html" class="nav-link active">个人中心</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主体内容 -->
+    <main class="profile-main">
+        <div class="container">
+            <!-- 用户信息区域 -->
+            <div class="user-section">
+                <div class="user-card">
+                    <div class="user-avatar">
+                        <img src="images/app.png" alt="用户头像">
+                        <button class="avatar-edit">更换头像</button>
+                    </div>
+                    <div class="user-info">
+                        <h2 class="user-name" id="user-name">未登录用户</h2>
+                        <p class="user-email" id="user-email">请登录查看更多信息</p>
+                        <div class="user-stats">
+                            <div class="stat-item">
+                                <span class="stat-value" id="order-count">0</span>
+                                <span class="stat-label">全部订单</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value" id="favorite-count">0</span>
+                                <span class="stat-label">我的收藏</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value" id="coupon-count">0</span>
+                                <span class="stat-label">优惠券</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-actions">
+                        <button class="edit-profile-btn" id="edit-profile-btn">编辑资料</button>
+                        <button class="logout-btn" id="logout-btn" style="display:none;">退出登录</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 功能菜单区域 -->
+            <div class="menu-section">
+                <!-- 订单模块 -->
+                <div class="menu-card">
+                    <div class="card-header">
+                        <h3><span>📦</span> 我的订单</h3>
+                        <a href="order.html" class="view-all">查看全部</a>
+                    </div>
+                    <div class="order-status-grid">
+                        <a href="order.html?status=pending" class="status-item">
+                            <span class="status-icon">💳</span>
+                            <span class="status-name">待付款</span>
+                            <span class="status-count" id="pending-count">0</span>
+                        </a>
+                        <a href="order.html?status=paid" class="status-item">
+                            <span class="status-icon">📦</span>
+                            <span class="status-name">待发货</span>
+                            <span class="status-count" id="paid-count">0</span>
+                        </a>
+                        <a href="order.html?status=shipped" class="status-item">
+                            <span class="status-icon">🚚</span>
+                            <span class="status-name">待收货</span>
+                            <span class="status-count" id="shipped-count">0</span>
+                        </a>
+                        <a href="order.html?status=completed" class="status-item">
+                            <span class="status-icon">⭐</span>
+                            <span class="status-name">待评价</span>
+                            <span class="status-count" id="completed-count">0</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 常用功能 -->
+                <div class="menu-card">
+                    <div class="menu-grid">
+                        <a href="#" class="menu-item" id="address-link">
+                            <span class="menu-icon">📍</span>
+                            <span class="menu-name">收货地址</span>
+                        </a>
+                        <a href="#" class="menu-item" id="coupon-link">
+                            <span class="menu-icon">🎫</span>
+                            <span class="menu-name">优惠券</span>
+                        </a>
+                        <a href="#" class="menu-item" id="favorite-link">
+                            <span class="menu-icon">❤️</span>
+                            <span class="menu-name">我的收藏</span>
+                        </a>
+                        <a href="#" class="menu-item" id="history-link">
+                            <span class="menu-icon">👀</span>
+                            <span class="menu-name">浏览记录</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 更多服务 -->
+                <div class="menu-card">
+                    <div class="menu-grid">
+                        <a href="#" class="menu-item">
+                            <span class="menu-icon">🎁</span>
+                            <span class="menu-name">积分商城</span>
+                        </a>
+                        <a href="#" class="menu-item">
+                            <span class="menu-icon">👤</span>
+                            <span class="menu-name">会员中心</span>
+                        </a>
+                        <a href="#" class="menu-item">
+                            <span class="menu-icon">📞</span>
+                            <span class="menu-name">联系客服</span>
+                        </a>
+                        <a href="#" class="menu-item">
+                            <span class="menu-icon">⚙️</span>
+                            <span class="menu-name">设置</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 编辑资料弹窗 -->
+    <div class="modal-overlay" id="edit-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>编辑个人资料</h3>
+                <button class="close-modal" id="close-edit-modal">×</button>
+            </div>
+            <form id="edit-form">
+                <div class="form-group">
+                    <label>用户名</label>
+                    <input type="text" id="edit-username" required>
+                </div>
+                <div class="form-group">
+                    <label>邮箱</label>
+                    <input type="email" id="edit-email" required>
+                </div>
+                <div class="form-group">
+                    <label>手机号</label>
+                    <input type="tel" id="edit-phone">
+                </div>
+                <div class="form-group">
+                    <label>性别</label>
+                    <select id="edit-gender">
+                        <option value="">请选择</option>
+                        <option value="male">男</option>
+                        <option value="female">女</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>生日</label>
+                    <input type="date" id="edit-birthday">
+                </div>
+                <button type="submit" class="save-profile-btn">保存</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 收货地址管理弹窗 -->
+    <div class="modal-overlay" id="address-modal">
+        <div class="modal-content address-modal">
+            <div class="modal-header">
+                <h3>收货地址管理</h3>
+                <button class="close-modal" id="close-address-modal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="address-list" id="profile-address-list">
+                    <!-- 地址列表 -->
+                </div>
+                <button class="add-address-btn" id="profile-add-address">+ 添加新地址</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>关于我们</h3>
+                    <p>优选商城致力于为用户提供优质的购物体验</p>
+                </div>
+                <div class="footer-section">
+                    <h3>联系方式</h3>
+                    <p>客服热线：400-888-8888</p>
+                    <p>邮箱：service@youxuan.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>关注我们</h3>
+                    <img src="images/wechat.png" alt="微信公众号" class="wechat-qrcode">
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 优选商城 版权所有 | 学号：24215220234 | 姓名：黄贤臻</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

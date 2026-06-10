@@ -1,0 +1,84 @@
+/* 首页专属样式 */
+
+/* 轮播图动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.carousel-item.active img {
+    animation: fadeIn 0.5s ease;
+}
+
+/* 商品卡片悬浮效果 */
+.product-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.product-item:hover::before {
+    left: 100%;
+}
+
+/* 分类图标动画 */
+.category-item img {
+    transition: transform 0.3s;
+}
+
+.category-item:hover img {
+    transform: scale(1.1);
+}
+
+/* 搜索框聚焦效果 */
+.search-box:focus-within {
+    box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+}
+
+/* 页脚链接效果 */
+.footer-section p:hover {
+    color: #ff6b35;
+    cursor: pointer;
+}
+
+/* 热销标签 */
+.product-item.hot::after {
+    content: '热销';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #ff4444;
+    color: #fff;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+
+/* 新品标签 */
+.product-item.new::after {
+    content: '新品';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #ff6b35;
+    color: #fff;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 5px;
+}

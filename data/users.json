@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "username": "zhangsan",
+    "email": "zhang@example.com",
+    "password": "123456",
+    "phone": "13800138001",
+    "role": "user",
+    "createdAt": "2024-01-15T10:30:00Z"
+  },
+  {
+    "id": 2,
+    "username": "lisi",
+    "email": "li@example.com",
+    "password": "123456",
+    "phone": "13800138002",
+    "role": "user",
+    "createdAt": "2024-02-20T14:20:00Z"
+  },
+  {
+    "id": 3,
+    "username": "wangwu",
+    "email": "wang@example.com",
+    "password": "123456",
+    "phone": "13800138003",
+    "role": "user",
+    "createdAt": "2024-03-10T09:15:00Z"
+  },
+  {
+    "id": 4,
+    "username": "seller001",
+    "email": "seller@example.com",
+    "password": "123456",
+    "phone": "13800138004",
+    "role": "seller",
+    "createdAt": "2024-01-05T11:00:00Z"
+  },
+  {
+    "id": 5,
+    "username": "admin",
+    "email": "admin@example.com",
+    "password": "admin123",
+    "phone": "13800138000",
+    "role": "admin",
+    "createdAt": "2024-01-01T00:00:00Z"
+  }
+]
